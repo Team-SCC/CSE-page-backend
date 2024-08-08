@@ -22,3 +22,19 @@ class Student(StudentBase):
 
     class Config:
         from_attributes = True # orm_mode : pydantic V1. now V2
+
+class SessionBase(BaseModel):
+    uuid: int
+    sid: int
+
+    class Config:
+        from_attributes = True # orm_mode : pydantic V1. now V2
+
+class LockerReservationBase(BaseModel):
+    studentNumber: int
+    lockerNumber: int
+    date: date
+    used: bool
+
+    class Config:
+        from_attributes = True # orm_mode : pydantic V1. now V2

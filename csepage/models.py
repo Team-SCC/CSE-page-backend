@@ -44,3 +44,17 @@ class Student(Base):
             raise ValueError("auth must be 0(normal), 1(professor), 2(admin)")
         
         return auth
+
+class Session(Base):
+    __tablename__ = "sessions"
+
+    uuid = Column(Integer, nullable=False, primary_key=True)
+    sid = Column(Integer, ForeignKey("students.sid")) # FK
+
+class LockerReservation(Base):
+    __tablename__ = "lockerreservations"
+
+    studentNumber = Column(Integer, ForeignKey("students.sid"), nullable=True)
+    lockerNumber = Column(Integer, primary_key=True)
+    date = Column(Date)
+    used = Column(Boolean, nullable=False)
