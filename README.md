@@ -12,6 +12,18 @@ conda env create -f linux_environment.yaml
 conda env create -f mac_environment.yaml
 ```
 
+## install Postgresql in windows
+
+### PostgreSQL installer
+
+[PostgreSQL install](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+
+### Microsoft VC++ runtime error 발생시
+
+```powershell
+postgresql-installer-windows.exe --install_runtimes 0
+```
+
 ## init file name list
 
 - csepage/database.py
