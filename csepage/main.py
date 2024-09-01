@@ -1,12 +1,13 @@
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 
-import crud, models, schemas
-from database import SessionLocal, engine
+from csepage import crud, models, schemas
+from csepage.database import SessionLocal, engine
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
 
 def get_db():
     db = SessionLocal()
@@ -15,17 +16,17 @@ def get_db():
     finally:
         db.close()
 
-#################### url ####################
 
 @app.post("/ping")
 def test_ping():
     return {"message": "Hello World"}
 
+
 @app.post("/student", response_model=schemas.Student)
 def create_student(student: schemas.StudentCreate, db: Session = Depends(get_db)):
-    db_user  = crud.get_student(db, student_sid=student.sid)
+    db_user = crud.get_student(db, student_sid=student.sid)
 
     if db_user:
         raise HTTPException(status_code=400, detail="Student ID Already Exist")
-    
+
     return crud.create_student(db=db, student=student)
