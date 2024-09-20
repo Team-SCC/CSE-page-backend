@@ -15,10 +15,11 @@ repos:
         exclude: ^alembic/versions/
 
   - repo: https://github.com/psf/black
-    rev: 23.9.1  # Black 포매터 버전
+    rev: 24.8.0  # Black 포매터 버전
     hooks:
       - id: black  # Python 코드 스타일을 자동으로 정리
         exclude: ^alembic/versions/
+        language_version: python3.11
 
   - repo: https://github.com/PyCQA/flake8
     rev: 6.1.0  # Flake8 버전
@@ -26,3 +27,11 @@ repos:
       - id: flake8  # Python 코드 린터, 코드 스타일 검사
         args: ["--max-line-length=88"]  # 최대 라인 길이를 설정 (Black과 일치)
         exclude: ^alembic/versions/
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.11.1  # mypy의 버전, 원하는 버전을 설정하세요
+    hooks:
+      - id: mypy
+        name: mypy
+        additional_dependencies: ['types-requests']  # 필요한 추가 타입 패키지가 있다면 여기에 추가하세요
+        language_version: python3.11  # 원하는 파이썬 버전으로 설정하세요
