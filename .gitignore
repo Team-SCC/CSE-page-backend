@@ -1,1 +1,4 @@
 __pycache__
+*.ini
+.env
+.DS_Store

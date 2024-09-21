@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from datetime import date
 
+
 class StudentBase(BaseModel):
     sid: int
     name: str
@@ -9,10 +10,12 @@ class StudentBase(BaseModel):
     email: str
     auth: int
 
+
 class StudentCreate(StudentBase):
     gender: str | None = None
     phone: str | None = None
     nickname: str | None = None
+
 
 class Student(StudentBase):
     gender: str | None = None
@@ -21,14 +24,16 @@ class Student(StudentBase):
     password: str
 
     class Config:
-        from_attributes = True # orm_mode : pydantic V1. now V2
+        from_attributes = True  # orm_mode : pydantic V1. now V2
+
 
 class SessionBase(BaseModel):
     uuid: int
     sid: int
 
     class Config:
-        from_attributes = True # orm_mode : pydantic V1. now V2
+        from_attributes = True  # orm_mode : pydantic V1. now V2
+
 
 class LockerReservationBase(BaseModel):
     studentNumber: int
@@ -37,4 +42,4 @@ class LockerReservationBase(BaseModel):
     used: bool
 
     class Config:
-        from_attributes = True # orm_mode : pydantic V1. now V2
+        from_attributes = True  # orm_mode : pydantic V1. now V2
