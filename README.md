@@ -1,30 +1,13 @@
 # CSE PAGE Backend Part
 
-## install conda env in linux
+## 최소 1회 실행 - 커밋시 자동으로 pre-commit 실행
 
-```powershell
-conda env create -f linux_environment.yaml
+```bash
+pre-commit install
 ```
 
-## install conda env in mac
+## 커밋 전 해당 명령어 수행 후 커밋
 
-```powershell
-conda env create -f mac_environment.yaml
+```bash
+poetry run pre-commit run --all-files
 ```
-
-## install Postgresql in windows
-
-### PostgreSQL installer
-
-[PostgreSQL install](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
-
-### Microsoft VC++ runtime error 발생시
-
-```powershell
-postgresql-installer-windows.exe --install_runtimes 0
-```
-
-## init file name list
-
-- csepage/database.py
-- csepage/alembic.ini
