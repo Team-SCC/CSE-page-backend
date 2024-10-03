@@ -16,7 +16,7 @@ def get_db():
         db.close()
 
 
-@app.post("/")
+@app.get("/")
 def test_ping():
     return {"message": "Hello World"}
 
