@@ -884,6 +884,17 @@ anyio = ">=3.4.0,<5"
 full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.7)", "pyyaml"]
 
 [[package]]
+name = "types-sqlalchemy"
+version = "1.4.53.38"
+description = "Typing stubs for SQLAlchemy"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-SQLAlchemy-1.4.53.38.tar.gz", hash = "sha256:5bb7463537e04e1aa5a3557eb725930df99226dcfd3c9bf93008025bfe5c169e"},
+    {file = "types_SQLAlchemy-1.4.53.38-py3-none-any.whl", hash = "sha256:7e60e74f823931cc9a9e8adb0a4c05e5533e6708b8a266807893a739faf4eaaa"},
+]
+
+[[package]]
 name = "typing-extensions"
 version = "4.12.2"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -935,4 +946,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "111bd76380d3fbb41dca5372a121ae9333b3d860ed1d1d568a424464888ed9c0"
+content-hash = "598ea6dabbb36bb0f1be145f5d7986c5b625bfaf8dffdde5802c190c776855a8"
